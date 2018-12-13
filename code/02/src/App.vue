@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <app-new-reindeer @addReindeer="addReindeer"></app-new-reindeer>
-    <app-sled :reindeers="reindeers"></app-sled>
+    <app-new-reindeer v-if="reindeers.length <= maxReindeers - 1" @addReindeer="addReindeer"></app-new-reindeer>
+    <app-sled :reindeers="reindeers" :max-reindeers="maxReindeers"></app-sled>
   </div>
 </template>
 
@@ -19,6 +19,7 @@ export default {
   data() {
     return {
       reindeers: [],
+      maxReindeers: 8,
     };
   },
   methods: {
@@ -31,6 +32,7 @@ export default {
 
 <style lang="scss">
 @import '../node_modules/animate.css/animate.min.css';
+@import './assets/styles.scss';
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -39,19 +41,5 @@ export default {
   text-align: center;
   color: #fff;
   margin-top: 60px;
-}
-
-body {
-  background: #d1913c; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffd194,
-    #d1913c
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffd194,
-    #d1913c
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 </style>

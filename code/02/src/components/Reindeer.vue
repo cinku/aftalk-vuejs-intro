@@ -16,8 +16,4 @@ export default {
     width: 170px;
     height: 170px;
   }
-
-  .reindeer {
-    margin-top: 15px;
-  }
 </style>
