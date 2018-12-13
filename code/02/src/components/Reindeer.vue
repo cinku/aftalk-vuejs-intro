@@ -1,5 +1,5 @@
 <template>
- <div class="reindeer">
+ <div class="reindeer animated bounce">
    <img src="../assets/reindeer.png">
    <div>{{reindeer}}</div>
  </div>

@@ -7,29 +7,31 @@
 </template>
 
 <script>
-import Sled from './components/Sled.vue';
-import NewReindeer from './components/NewReindeer.vue';
+import Sled from "./components/Sled.vue";
+import NewReindeer from "./components/NewReindeer.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     appSled: Sled,
-    appNewReindeer: NewReindeer,
+    appNewReindeer: NewReindeer
   },
   data() {
     return {
-      reindeers: ['Rudolf', 'Rupert', 'Przemek'],
+      reindeers: [],
     };
   },
   methods: {
     addReindeer(reindeer) {
       this.reindeers.push(reindeer);
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss">
+@import '../node_modules/animate.css/animate.min.css';
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -40,16 +42,16 @@ export default {
 }
 
 body {
-  background: #ed213a; /* fallback for old browsers */
+  background: #d1913c; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #93291e,
-    #ed213a
+    #ffd194,
+    #d1913c
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #93291e,
-    #ed213a
+    #ffd194,
+    #d1913c
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 </style>

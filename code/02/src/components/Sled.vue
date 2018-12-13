@@ -1,9 +1,12 @@
 <template>
-  <div class="sled-container">
-    <div class="reindeers">
+  <div class="sled-container" :style="{ 'flex-direction': reindeers.length === 0 ? 'column' : 'row' }">
+    <div v-if="reindeers.length === 0">
+      <h2>Add some reindeers to pull poor santa's sled :(</h2>
+    </div>
+    <div v-else class="reindeers">
       <app-reindeer v-for="(reindeer, index) of reindeers" :reindeer="reindeer" :key="index"></app-reindeer>
     </div>
-    <div class="santa">
+    <div class="santa" :class="{ 'animated wobble infinite': reindeers.length === 0 }">
       <img src="../assets/santa.png">
     </div>
   </div>
