@@ -1,6 +1,7 @@
 <template>
  <div class="reindeer animated bounce">
-   <img src="../assets/reindeer.png">
+   <img v-if="reindeer === 'Przenifer'" src="../assets/przenifer.png">
+   <img v-else src="../assets/reindeer.png">
    <div>{{reindeer}}</div>
  </div>
 </template>
